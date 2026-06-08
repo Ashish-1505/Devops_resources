@@ -1,0 +1,8 @@
+#Connect to an EC2 instance from terminal.
+
+chmod 600 aws-key.pem
+
+ssh -i aws-key.pem ubuntu@public-ip
+
+#AWS Docs for creating instance by using AWS CLI
+https://docs.aws.amazon.com/cli/latest/userguide/cli-services-ec2-instances.html

@@ -1,0 +1,46 @@
+#Lists files and dirs
+ls
+
+#Present working dir
+pwd
+
+#Change dir
+cd dirname
+
+#Go one dir back
+cd ..
+
+#Go two dir back
+cd ../..
+
+#List files with time stamp and other details
+ls -ltr
+
+#Create a files
+touch filename
+
+#Create a file and write content inside
+vi filename
+Press ESC, then press I to start writing
+Pess ESC again and write :wq! to save the file
+
+#Read a file
+cat filename
+
+#Create dir
+mkdir dirname
+
+#Remove file
+rm filename
+
+#To check memory of system
+free -g
+
+#To check no. of cpu
+nproc
+
+#To check disk size
+df -h
+
+#To check complete system info
+top

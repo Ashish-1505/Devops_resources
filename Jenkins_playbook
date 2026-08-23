@@ -1,14 +1,16 @@
 # Installation commands
-
+1.
 sudo apt update
 sudo apt install openjdk-17-jre
 
+2.
 sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
   https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
-
+3.
 echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" \
   | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
 
+4.
 sudo apt update
 sudo apt install jenkins
 

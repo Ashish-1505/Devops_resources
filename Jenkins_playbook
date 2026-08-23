@@ -21,3 +21,23 @@ sudo systemctl start jenkins
 
 6.
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+#Move tmp from ram to disk
+1.
+sudo mkdir -p /etc/systemd/system/jenkins.service.d
+
+2.
+sudo nano /etc/systemd/system/jenkins.service.d/override.conf
+
+3. # Paste in editor
+[Service]
+Environment="JAVA_OPTS=-Djava.io.tmpdir=/var/lib/jenkins/tmp"
+
+4. #Give permissions to override
+sudo mkdir -p /var/lib/jenkins/tmp
+sudo chown -R jenkins:jenkins /var/lib/jenkins/tmp
+
+5. 
+sudo systemctl reset-failed jenkins.service #only if failed earlier
+sudo systemctl daemon-reload
+sudo systemctl start jenkins

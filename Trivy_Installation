@@ -1,0 +1,20 @@
+# Intallation steps for Ubuntu 26.04 EC2 instance
+1.
+sudo apt update
+sudo apt install -y wget gnupg
+
+2.
+wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key \
+  | gpg --dearmor \
+  | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
+
+3.
+echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" \
+  | sudo tee /etc/apt/sources.list.d/trivy.list
+
+4.
+sudo apt update
+
+5.
+sudo apt install -y trivy
+trivy --version

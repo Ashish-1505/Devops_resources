@@ -14,6 +14,10 @@ echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkin
 sudo apt update
 sudo apt install jenkins
 
+5.
 #Start Jenkins commands
 sudo systemctl enable jenkins
 sudo systemctl start jenkins
+
+6.
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword

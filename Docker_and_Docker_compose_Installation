@@ -1,0 +1,16 @@
+# 1. Update system repositories and install Docker + Compose
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y docker.io docker-compose-v2
+
+# 2. Start and enable the Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# 3. Grant ubuntu user permissions to run Docker without sudo
+sudo usermod -aG docker ubuntu
+sudo usermod -aG docker jenkins # Only if jenkins has to execute docker commands
+newgrp docker
+
+# 4. Verify installation
+docker --version
+docker compose version
